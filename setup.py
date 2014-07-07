@@ -15,7 +15,8 @@ if os.path.exists(README_fn):
 version = '0.1dev'
 
 install_requires = [
-    'requests'
+    'requests',
+    'feedparser'
 ]
 
 testing_extras = [

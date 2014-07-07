@@ -21,6 +21,7 @@ import hashlib
 
 import sys
 import getopt
+import feedparser
 import pkg_resources
 import xmlrpclib
 import os
@@ -82,11 +83,18 @@ def main():
     if args[0] == 'list':
         print _list_all(s)
     elif args[0] == 'del':
-        dls = _list_all(s)
         for did in args[1:]:
             for dl in dls:
                 if 'infoHash' in dl and dl['infoHash'] == did:
                     s.aria2.remove(dl['gid'])
+    elif args[0] == 'feed':
+        active = dict([(a['infoHash'], a['gid']) for a in _list_all(s)])
+        if args[1] == 'recent':
+            recent = feedparser.parse("%s/feeds/recent.rss" % lobo2url)
+            dls = _list_all(s)
+            for item in recent.entries:
+                if not item.title in active:
+                    s.aria2.addUri([item.link], dict(dir=storage))
     elif args[0] == 'recv':
         print s.aria2.addUri(["%s/api/dataset/%s.torrent" % (lobo2url, did) for did in args[1:]], dict(dir=storage))
     elif args[0] == 'send':

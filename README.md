@@ -7,7 +7,7 @@ looking at the source as an example rather than using this as a tool right now. 
 then start aria2c using something like the provided start-aria.sh script.
 
 Development Installation
-------------
+------------------------
 
 - create & activate virtualenv
 - setup.py develop
@@ -36,6 +36,7 @@ Example
 -------
 
 ```bash
-env LOBO2URL=http://localhost:8000 lobo2a -d /tmp recv <info_hash_hex>
-env LOBO2URL=http://localhost:8000 LOBO2TOKEN=<bearer token> lobo2a send file_or_directory
+# env LOBO2URL=http://localhost:8000 lobo2a -d /tmp recv <info_hash_hex>
+
+# env LOBO2URL=http://localhost:8000 LOBO2TOKEN=<bearer token> lobo2a send file_or_directory
 ```

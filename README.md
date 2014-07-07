@@ -9,9 +9,9 @@ then start aria2c using something like the provided start-aria.sh script.
 Development Installation
 ------------
 
-# create & activate virtualenv
-# setup.py develop
-# lobo2 --help
+- create & activate virtualenv
+- setup.py develop
+- lobo2 --help
 
 Usage
 -----

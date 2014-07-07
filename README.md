@@ -35,5 +35,7 @@ Commands:
 Example
 -------
 
-  # env LOBO2URL=http://localhost:8000 lobo2a -d /tmp recv <info_hash_hex>
-  # env LOBO2URL=http://localhost:8000 LOBO2TOKEN=<bearer token> lobo2a send file_or_directory
+```bash
+env LOBO2URL=http://localhost:8000 lobo2a -d /tmp recv <info_hash_hex>
+env LOBO2URL=http://localhost:8000 LOBO2TOKEN=<bearer token> lobo2a send file_or_directory
+```
